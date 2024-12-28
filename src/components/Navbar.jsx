@@ -1,10 +1,25 @@
 import React from 'react';
 
 const Navbar = () => {
- const navOptions = <>
-        <li><a>Item 555</a></li>
-        <li><a>Item 3</a></li>
-    </>
+ const navOptions = (
+   <>
+     <li>
+       <a>Home</a>
+     </li>
+     <li>
+       <a>CONTACT US</a>
+     </li>
+     <li>
+       <a>DASHBOARD</a>
+     </li>
+     <li>
+       <a>OUR MENU</a>
+     </li>
+     <li>
+       <a>OUR SHOP</a>
+     </li>
+   </>
+ );
 
     return (
       <div>
