@@ -10,7 +10,8 @@ const FeaturedItem = () => {
                 
                 </div>
                 <div>
-                    
+                    <p className='uppercase'>Where can I get some?</p>
+                    <p className=''>January 01, 2025</p>
                 </div>
             </div>
         </div>
