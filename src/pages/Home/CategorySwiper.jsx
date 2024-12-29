@@ -20,7 +20,7 @@ const CategorySwiper = () => {
       ></SectionTitle>
       <Swiper
         slidesPerView={4}
-        //   spaceBetween={}
+          spaceBetween={60}
         pagination={{
           clickable: true,
         }}
