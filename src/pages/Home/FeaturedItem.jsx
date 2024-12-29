@@ -9,6 +9,9 @@ const FeaturedItem = () => {
                 <div>
                 
                 </div>
+                <div>
+                    
+                </div>
             </div>
         </div>
     );
