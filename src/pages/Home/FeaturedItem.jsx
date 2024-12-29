@@ -7,9 +7,7 @@ const FeaturedItem = () => {
             <SectionTitle subHeading={"check it out"} heading={"Featured Item"}></SectionTitle>
             <div>
                 <div>
-                    <div>
-                        
-                    </div>
+                
                 </div>
             </div>
         </div>
