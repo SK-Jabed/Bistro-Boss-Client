@@ -4,6 +4,7 @@ import Cover from '../../components/Cover';
 import menuCover from "../../assets/menu/banner3.jpg";
 import useMenu from '../../hooks/useMenu';
 import SectionTitle from '../../components/SectionTitle';
+import MenuCategory from './MenuCategory';
 
 const Menu = () => {
     const [menu] = useMenu();
@@ -21,6 +22,7 @@ const Menu = () => {
             </Helmet>
             <Cover img={menuCover} title={"Our Menu"}></Cover>
             <SectionTitle subHeading={"Don't miss"} heading={"Today's Offer"}></SectionTitle>
+            <MenuCategory items={offers}></MenuCategory>
         </div>
     );
 };
