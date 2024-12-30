@@ -1,9 +1,17 @@
 import React from "react";
 import MenuItem from "../../components/MenuItem";
+import CategoryCover from "../../components/CategoryCover";
 
-const MenuCategory = ({ items }) => {
+const MenuCategory = ({ items, title, img, description }) => {
   return (
     <div>
+      {title && (
+        <CategoryCover
+          img={img}
+          title={title}
+          description={description}
+        ></CategoryCover>
+      )}
       <div className="grid md:grid-cols-2 gap-10">
         {items.map((item) => (
           <MenuItem key={item._id} item={item}></MenuItem>
