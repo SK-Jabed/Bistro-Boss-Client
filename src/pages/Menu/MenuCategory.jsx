@@ -1,4 +1,5 @@
 import React from "react";
+import MenuItem from "../../components/MenuItem";
 
 const MenuCategory = ({ items }) => {
   return (
