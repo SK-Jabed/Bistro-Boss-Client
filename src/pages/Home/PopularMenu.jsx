@@ -6,6 +6,7 @@ import useMenu from "../../hooks/useMenu";
 const PopularMenu = () => {
   const [menu] = useMenu();
   const popularItems = menu.filter((item) => item.category === "popular");
+
   // const [menu, setMenu] = useState([]);
 
   // useEffect(() => {
@@ -17,8 +18,6 @@ const PopularMenu = () => {
   //     });
   // }, []);
 
-  console.log(menu);
-
   return (
     <section>
       <SectionTitle
@@ -26,7 +25,7 @@ const PopularMenu = () => {
         subHeading="Check it out"
       ></SectionTitle>
       <div className="grid md:grid-cols-2 gap-10">
-        {menu.map((item) => (
+        {popularItems.map((item) => (
           <MenuItem key={item._id} item={item}></MenuItem>
         ))}
       </div>
