@@ -3,17 +3,23 @@ import Banner from './Banner';
 import CategorySwiper from './CategorySwiper';
 import PopularMenu from './PopularMenu';
 import ChefService from './ChefService';
+import FeaturedItem from './FeaturedItem';
+import Testimonials from './Testimonials';
 
 const Home = () => {
     return (
-        <div>
-           <Banner></Banner>
-           <div className='container w-10/12 mx-auto'>
-           <CategorySwiper></CategorySwiper>
-           <ChefService></ChefService>
-            <PopularMenu></PopularMenu>
-           </div>
+      <div>
+        <Banner></Banner>
+        <div className="container w-10/12 mx-auto">
+          <CategorySwiper></CategorySwiper>
+          <ChefService></ChefService>
+          <PopularMenu></PopularMenu>
         </div>
+        <FeaturedItem></FeaturedItem>
+        <div className="container w-10/12 mx-auto">
+          <Testimonials></Testimonials>
+        </div>
+      </div>
     );
 };
 
