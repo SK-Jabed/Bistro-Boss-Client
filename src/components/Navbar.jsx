@@ -1,10 +1,11 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
  const navOptions = (
    <>
      <li>
-       <a>Home</a>
+       <NavLink to={"/"}>HOME</NavLink>
      </li>
      <li>
        <a>CONTACT US</a>
@@ -13,7 +14,7 @@ const Navbar = () => {
        <a>DASHBOARD</a>
      </li>
      <li>
-       <a>OUR MENU</a>
+       <NavLink to={"/menu"}>OUR MENU</NavLink>
      </li>
      <li>
        <a>OUR SHOP</a>
