@@ -2,7 +2,7 @@ import React from "react";
 
 const CategoryCover = ({ img, title, description }) => {
   return (
-    <div>
+    <div className="mb-20">
       <div
         className="relative bg-cover bg-center bg-no-repeat h-[620px] py-44 md:px-16 px-12"
         style={{ backgroundImage: `url(${img})` }}

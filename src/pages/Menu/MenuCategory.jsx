@@ -5,21 +5,21 @@ import CategoryCover from "../../components/CategoryCover";
 const MenuCategory = ({ items, title, img, description }) => {
   return (
     <div>
-      {title && (
-        <CategoryCover
-          img={img}
-          title={title}
-          description={description}
-        ></CategoryCover>
-      )}
-      <div className="grid md:grid-cols-2 gap-10">
+        {title && (
+          <CategoryCover
+            img={img}
+            title={title}
+            description={description}
+          ></CategoryCover>
+        )}
+      <div className="grid md:grid-cols-2 gap-10 w-10/12 mx-auto">
         {items.map((item) => (
           <MenuItem key={item._id} item={item}></MenuItem>
         ))}
       </div>
-      <div className="text-center">
-        <button className="btn btn-outline border-0 border-b-4 mt-4">
-          View Full Menu
+      <div className="text-center mb-12">
+        <button className="btn btn-outline border-0 border-b-4 mt-8">
+          ORDER YOUR FAVOURITE FOOD
         </button>
       </div>
     </div>
