@@ -8,7 +8,7 @@ const CategoryCover = ({ img, title, description }) => {
         style={{ backgroundImage: `url(${img})` }}
       >
         <div className="lg:max-w-4xl mx-auto bg-[#151515] bg-opacity-60 lg:py-20 lg:px-20 md:px-14 md:py-8 px-10 py-6 shadow-lg">
-          <h1 className="text-2xl md:text-4xl font-bold text-center text-white mb-4">
+          <h1 className="text-2xl md:text-4xl font-bold text-center text-white mb-4 uppercase">
             {title}
           </h1>
           <p className="text-white text-center leading-relaxed">

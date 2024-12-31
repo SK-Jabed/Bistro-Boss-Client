@@ -35,7 +35,7 @@ const Menu = () => {
         <MenuCategory items={offers}></MenuCategory>
         <MenuCategory
           items={desserts}
-          title={"DESSERTS"}
+          title={"desserts"}
           img={dessertCoverImage}
           description={
             "Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
@@ -43,7 +43,7 @@ const Menu = () => {
         ></MenuCategory>
         <MenuCategory
           items={pizzas}
-          title={"PIZZA"}
+          title={"pizza"}
           img={pizzaCoverImage}
           description={
             "Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
@@ -51,7 +51,7 @@ const Menu = () => {
         ></MenuCategory>
         <MenuCategory
           items={salads}
-          title={"SALADS"}
+          title={"salads"}
           img={saladCoverImage}
           description={
             "Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
@@ -59,7 +59,7 @@ const Menu = () => {
         ></MenuCategory>
         <MenuCategory
           items={soups}
-          title={"SOUPS"}
+          title={"soups"}
           img={soupCoverImage}
           description={
             "Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
@@ -67,7 +67,7 @@ const Menu = () => {
         ></MenuCategory>
         <MenuCategory
           items={drinks}
-          title={"DRINKS"}
+          title={"drinks"}
           img={drinkCoverImage}
           description={
             "Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
