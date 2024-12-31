@@ -2,6 +2,7 @@ import React from "react";
 
 const MenuItem = ({ item }) => {
   const { name, image, price, recipe } = item;
+  
   return (
     <div className="flex space-x-2 items-center justify-center">
       <img
