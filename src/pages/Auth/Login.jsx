@@ -8,7 +8,7 @@ import {
 } from "react-simple-captcha";
 
 const Login = () => {
-    const [disabled, setDisabled] = useState(true);
+  const [disabled, setDisabled] = useState(true);
   const captchaRef = useRef(null);
   useEffect(() => {
     loadCaptchaEnginge(6);
@@ -23,12 +23,11 @@ const Login = () => {
   };
 
   const handleValidateCaptcha = () => {
-      const user_captcha_value = captchaRef.current.value;
+    const user_captcha_value = captchaRef.current.value;
     if (validateCaptcha(user_captcha_value)) {
-        setDisabled(false);
-    }
-    else {
-        setDisabled(true);
+      setDisabled(false);
+    } else {
+      setDisabled(true);
     }
   };
   return (
