@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import {
@@ -6,8 +6,11 @@ import {
   LoadCanvasTemplate,
   validateCaptcha,
 } from "react-simple-captcha";
+import { AuthContext } from "../../contexts/AuthProvider";
 
 const Login = () => {
+  const { signIn } = useContext(AuthContext);
+
   const [disabled, setDisabled] = useState(true);
   const captchaRef = useRef(null);
   useEffect(() => {
@@ -20,6 +23,22 @@ const Login = () => {
     const password = form.password.value;
 
     console.log({ email, password });
+
+     signIn(email, password)
+     .then((result) => {
+       const user = result.user;
+       console.log(user);
+      //  Swal.fire({
+      //    title: "User Login Successful.",
+      //    showClass: {
+      //      popup: "animate__animated animate__fadeInDown",
+      //    },
+      //    hideClass: {
+      //      popup: "animate__animated animate__fadeOutUp",
+      //    },
+      //  });
+      //  navigate(from, { replace: true });
+     });
   };
 
   const handleValidateCaptcha = () => {
