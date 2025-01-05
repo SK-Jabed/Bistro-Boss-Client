@@ -11,15 +11,17 @@ import Swal from "sweetalert2";
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
-
   const [disabled, setDisabled] = useState(true);
+
   const navigate = useNavigate();
   const location = useLocation();
 
   const from = location.state?.from?.pathname || "/";
+
   useEffect(() => {
     loadCaptchaEnginge(6);
   }, []);
+
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -28,21 +30,20 @@ const Login = () => {
 
     console.log({ email, password });
 
-     signIn(email, password)
-     .then((result) => {
-       const user = result.user;
-       console.log(user);
-       Swal.fire({
-         title: "User Login Successful.",
-         showClass: {
-           popup: "animate__animated animate__fadeInDown",
-         },
-         hideClass: {
-           popup: "animate__animated animate__fadeOutUp",
-         },
-       });
-       navigate(from, { replace: true });
-     });
+    signIn(email, password).then((result) => {
+      const user = result.user;
+      console.log(user);
+      Swal.fire({
+        title: "User Login Successful.",
+        showClass: {
+          popup: "animate__animated animate__fadeInDown",
+        },
+        hideClass: {
+          popup: "animate__animated animate__fadeOutUp",
+        },
+      });
+      navigate(from, { replace: true });
+    });
   };
 
   const handleValidateCaptcha = (e) => {
@@ -53,6 +54,7 @@ const Login = () => {
       setDisabled(true);
     }
   };
+  
   return (
     <div>
       <Helmet>
