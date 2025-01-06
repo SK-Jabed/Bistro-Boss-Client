@@ -5,6 +5,7 @@ import { AuthContext } from "../../contexts/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const SignUp = () => {
   const {
@@ -15,6 +16,7 @@ const SignUp = () => {
   } = useForm();
   const { createUser, updateUserProfile } = useContext(AuthContext);
   const navigate = useNavigate();
+  const axiosPublic = useAxiosPublic();
 
   const onSubmit = (data) => {
     console.log(data);
@@ -23,16 +25,27 @@ const SignUp = () => {
       console.log(loggedUser);
       updateUserProfile(data.name, data.photoURL)
         .then(() => {
-          console.log("User profile info updated");
-          reset();
-          Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "User Created Successfully.",
-            showConfirmButton: false,
-            timer: 1500,
+          // Create User Entity in The Database
+          const userInfo = {
+            name: data.name,
+            email: data.email,
+          };
+
+          axiosPublic.post("/users", userInfo).then((res) => {
+            if ((res.data.insertedId)) {
+              console.log("User Added to The Database");
+              Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "User Created Successfully.",
+                showConfirmButton: false,
+                timer: 1500,
+              });
+              navigate("/");
+            }
           });
-          navigate("/");
+
+          reset();
         })
         .catch((error) => console.log(error));
     });
