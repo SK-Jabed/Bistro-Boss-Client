@@ -12,7 +12,7 @@ const AddItems = () => {
   const { register, handleSubmit, reset } = useForm();
   const axiosPublic = useAxiosPublic();
   const axiosSecure = useAxiosSecure();
-  
+
   const onSubmit = async (data) => {
     console.log(data);
     // image upload to imgbb and then get an url
@@ -22,6 +22,7 @@ const AddItems = () => {
         "content-type": "multipart/form-data",
       },
     });
+    
     if (res.data.success) {
       // now send the menu item data to the server with the image url
       const menuItem = {
