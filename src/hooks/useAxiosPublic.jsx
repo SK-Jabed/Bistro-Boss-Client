@@ -1,12 +1,11 @@
-import axios from 'axios';
-import React from 'react';
+import axios from "axios";
 
 export const axiosPublic = axios.create({
-  baseURL: "http://localhost:4000",
+  baseURL: "https://bistro-boss-server-rho-gray.vercel.app",
 });
 
 const useAxiosPublic = () => {
-    return axiosPublic;
+  return axiosPublic;
 };
 
 export default useAxiosPublic;

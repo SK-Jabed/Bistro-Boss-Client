@@ -17,10 +17,10 @@ import "swiper/css/navigation";
 // import './styles.css';
 
 // import required modules
-import { Navigation } from "swiper/modules";
-import SectionTitle from "../../components/SectionTitle";
 import { Rating } from "@smastrom/react-rating";
 import { FaQuoteLeft } from "react-icons/fa";
+import { Navigation } from "swiper/modules";
+import SectionTitle from "../../components/SectionTitle";
 
 import "@smastrom/react-rating/style.css";
 
@@ -28,7 +28,7 @@ const Testimonials = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/reviews")
+    fetch("https://bistro-boss-server-rho-gray.vercel.app/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);

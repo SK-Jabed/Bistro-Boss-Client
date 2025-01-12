@@ -1,23 +1,23 @@
 import { createBrowserRouter } from "react-router-dom";
+import AuthLayout from "../layouts/AuthLayout";
+import DashboardLayout from "../layouts/DashboardLayout";
 import MainLayout from "../layouts/MainLayout";
+import Login from "../pages/Auth/Login";
+import SignUp from "../pages/Auth/SignUp";
+import AddItems from "../pages/Dashboard/AddItems/AddItems";
+import AdminHome from "../pages/Dashboard/AdminHome/AdminHome";
+import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
+import Cart from "../pages/Dashboard/Cart/Cart";
+import ManageItems from "../pages/Dashboard/ManageItems/ManageItems";
+import Payment from "../pages/Dashboard/Payment/Payment";
+import PaymentHistory from "../pages/Dashboard/PaymentHistory/PaymentHistory";
+import UpdateItem from "../pages/Dashboard/UpdateItem/UpdateItem";
+import UserHome from "../pages/Dashboard/UserHome/UserHome";
 import Home from "../pages/Home/Home";
 import Menu from "../pages/Menu/Menu";
 import Order from "../pages/Order/Order";
-import AuthLayout from "../layouts/AuthLayout";
-import Login from "../pages/Auth/Login";
-import SignUp from "../pages/Auth/SignUp";
-import PrivateRoute from "./PrivateRoute";
-import DashboardLayout from "../layouts/DashboardLayout";
-import Cart from "../pages/Dashboard/Cart/Cart";
-import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
-import AddItems from "../pages/Dashboard/AddItems/AddItems";
 import AdminRoute from "./AdminRoute";
-import ManageItems from "../pages/Dashboard/ManageItems/ManageItems";
-import UpdateItem from "../pages/Dashboard/UpdateItem/UpdateItem";
-import Payment from "../pages/Dashboard/Payment/Payment";
-import PaymentHistory from "../pages/Dashboard/PaymentHistory/PaymentHistory";
-import AdminHome from "../pages/Dashboard/AdminHome/AdminHome";
-import UserHome from "../pages/Dashboard/UserHome/UserHome";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -49,7 +49,7 @@ const router = createBrowserRouter([
       // Normal User Routes
       {
         path: "/dashboard/userHome",
-        element: <UserHome></UserHome>
+        element: <UserHome></UserHome>,
       },
       {
         path: "/dashboard/cart",
@@ -96,7 +96,9 @@ const router = createBrowserRouter([
           </AdminRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:4000/menu/${params.id}`),
+          fetch(
+            `https://bistro-boss-server-rho-gray.vercel.app/menu/${params.id}`
+          ),
       },
       {
         path: "/dashboard/users",
