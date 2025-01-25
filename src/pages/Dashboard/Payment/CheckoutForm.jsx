@@ -21,12 +21,12 @@ const CheckoutForm = () => {
 
   useEffect(() => {
     if (totalPrice > 0) {
-    axiosSecure
-      .post("/create-payment-intent", { price: totalPrice })
-      .then((res) => {
-        console.log(res.data.clientSecret);
-        setClientSecret(res.data.clientSecret);
-      });
+      axiosSecure
+        .post("/create-payment-intent", { price: totalPrice })
+        .then((res) => {
+          console.log(res.data.clientSecret);
+          setClientSecret(res.data.clientSecret);
+        });
     }
   }, [axiosSecure, totalPrice]);
 
